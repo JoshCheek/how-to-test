@@ -31,7 +31,8 @@ called `mrspec`. It runs `Minitest` tests, like the one we made, but uses pieces
 another testing tool, `rspec`, to accomplish this.
 
 The dollar sign is meant to tell you that this command needs to be run this in the terminal.
-Everything after the line with the dollar sign is output that it printed from running that command.
+The command we wrote is only the line with the dollar sign. Everything after that is output,
+printed to our screen as the command was run.
 You might have more output than I did, probably about documentation. That's okay.
 
 ```
@@ -162,12 +163,35 @@ rspec /Users/josh/deleteme/how-to-test/erroring_test.rb:4 # Failing it errors
 ### Try it out
 
 Go ahead and try defining a few tests yourself.
-Write a test that does each of these things.
+Try these ideas out and see if you can predict what they are going to do.
+Try to come up with an explanation for how things work, such that your ability
+to predict what will happen improves as you go :)
+
+* Write a test that does each of the things we saw.
+* What happens if you write two tests in the same class?
+* What happens if you write two methods, but one doesn't begin with `test_`?
+* What happens if you have multiple classes in the same file that inherit from `Minitest::Test`?
+* What happens if you have a class with a `test_something` method, but it doesn't inherit from `Minitest::Test`?
+* What happens if you have two files, and they each define a test in a class of the same name? (you'll have to run this with `$ mrspec first_test.rb second_test.rb`)
+* What if you then make the test names the same?!
+* What if you have a successful `assert_equal` before a `skip`?
+* What about after a `skip`?
+* What if it's an unsuccessful assertion? Will it be different before vs after?
+* What if you have two unsuccessful assertions in the same method?
+  Will it double fail or fail on the first? Or on the last one?
+  Or maybe two wrongs make a right, and it passes?!?!
+* If you have two assertions in a successful method, how many examples will it tell you that it ran?
+* What if you put `10000.times { assert_equal 1, 1 }` in a test? What will that do?
+* Try adding a method named `helper_method`, that just returns `1`. This isn't a test, because it doesn't start with `test_`,
+  Now, make 2 tests like this: `assert_equal 1, helper_method`, and one like this: `assert_equal 2, helper_method`...
+  What will happen?
+* If you have 3 passing tests in a file, and you run them 10 times, will you see the same output every time?
 
 Intro to TDD
 ------------
 
 * What is TDD?
+* Why is it useful? Why bother writing tests first?
 * Why write the tests first?
 * Write pseudo code to start your tests.
 * Imagine how you want it to work.
