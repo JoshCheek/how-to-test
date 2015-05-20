@@ -2,7 +2,6 @@ require_relative 'calculator'
 require 'minitest'
 
 class CalculatorTest < Minitest::Test
-
   # We started with very little guidance, we only knew:
   #
   # Build a calculator, it needs to do these things:
@@ -69,6 +68,9 @@ class CalculatorTest < Minitest::Test
     assert_equal 0, Calculator.new.total
   end
 
+  # If we'd had more time, I would have changed the calculator
+  # to accept an initial total at this point.
+  # This is because it's annoying to have to write all this setup code!
   def test_adding_increases_the_total_by_the_added_amount
     calc = Calculator.new
 
@@ -79,9 +81,13 @@ class CalculatorTest < Minitest::Test
     assert_equal 11, calc.total
   end
 
+  # Notice that in this one, we make an assertion both before and after
+  # the `clear` method. This is to make sure the calculator looks the way we
+  # think it does, before we make our assertion about how it should change.
   def test_clearing_sets_the_total_to_zero
     calc = Calculator.new
     calc.add 10
+
     assert_equal 10, calc.total
     calc.clear
     assert_equal 0, calc.total

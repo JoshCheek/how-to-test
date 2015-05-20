@@ -164,8 +164,8 @@ rspec /Users/josh/deleteme/how-to-test/erroring_test.rb:4 # Failing it errors
 Go ahead and try defining a few tests yourself.
 Write a test that does each of these things.
 
-Levels of testing
------------------
+Intro to TDD
+------------
 
 * What is TDD?
 * Why write the tests first?
@@ -186,10 +186,15 @@ The process
 7. As you make your way through the acceptance test, you should wind up writing most/all of the unit tests, and the code to make them pass.
 8. After your acceptance test passes, you may have some unit tests left over, go ahead and write the tests now, and then write the code that makes them work.
 
-Watch me build a calculator like this
--------------------------------------
+Watch me build a calculator in this way
+---------------------------------------
 
 I'll demonstrate what this looks like, you observe.
+Your goal isn't to be able to write the code I write,
+it's to be able to apply these ideas in a way that
+leads you to writing code that guides you in the way mine guided me.
+
+
 The calculator will need to do these things:
 
 ```
@@ -199,6 +204,20 @@ The calculator will need to do these things:
 #clear
 #subtract
 ```
+
+Your test doesn't have to look like mine,
+but they need to help you understand what you're doing,
+and guide you as you write code.
+
+Your calculator doesn't have to look like mine,
+but it needs to reasonably behave the way a calculator
+would behave. You could take the names we came up with,
+and write 5 different calculators that make them pass!
+That's okay, there's not a right way to make the calculator,
+but there is probably consistent ideas that we would converge
+on, if we describe how a calculator works. As long as it
+does these things, the code is good!
+
 
 Now you build the calculator
 ----------------------------
