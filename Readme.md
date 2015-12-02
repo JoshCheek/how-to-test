@@ -1,3 +1,5 @@
+[Waypoints](https://github.com/JoshCheek/waypoints#how-testing-works)
+
 The hard skills
 ---------------
 
@@ -36,10 +38,20 @@ printed to our screen as the command was run.
 You might have more output than I did, probably about documentation. That's okay.
 
 ```
-$ gem install mrspec
-Fetching: mrspec-0.0.1.gem (100%)
-Successfully installed mrspec-0.0.1
-1 gem installed
+$ gem install mrspec rspec
+gem install mrspec rspec
+Successfully installed mrspec-0.2.2
+Fetching: rspec-support-3.4.1.gem (100%)
+Successfully installed rspec-support-3.4.1
+Fetching: rspec-mocks-3.4.0.gem (100%)
+Successfully installed rspec-mocks-3.4.0
+Fetching: rspec-expectations-3.4.0.gem (100%)
+Successfully installed rspec-expectations-3.4.0
+Fetching: rspec-core-3.4.1.gem (100%)
+Successfully installed rspec-core-3.4.1
+Fetching: rspec-3.4.0.gem (100%)
+Successfully installed rspec-3.4.0
+6 gems installed
 ```
 
 Now we can run our test:
@@ -57,7 +69,12 @@ by editing a file `.rspec`, in our home directory, to look like this:
 
 ```
 --colour
---format documentation
+```
+
+An easy way to do this is:
+
+```
+$ echo --colour > ~/.rspec
 ```
 
 And now when we run it, it comes out in colour, and formatted nicely:
@@ -204,11 +221,12 @@ The process
 3. Now describe the different things it needs to do in human words. Write these down in comments.
 4. Turn the example into a test by using `assert_equals` everywhere you expected something.
 5. Turn each description into a unit test by placing underscores where the spaces are. Skip all of these by default.
-6. Run the test, see how far you get along the acceptance test. Now go work on the unit test for this behaviour.
+6. Predict what the error / failure will be, or whether the test will pass.
+7. Run the test, see how far you get along the acceptance test. Now go work on the unit test for this behaviour.
    * If you discover new things that the code needs to do, you can add more unit tests.
    * If you discover that it doesn't need to do one of these things, you can delete the unit test.
-7. As you make your way through the acceptance test, you should wind up writing most/all of the unit tests, and the code to make them pass.
-8. After your acceptance test passes, you may have some unit tests left over, go ahead and write the tests now, and then write the code that makes them work.
+8. As you make your way through the acceptance test, you should wind up writing most/all of the unit tests, and the code to make them pass.
+9. After your acceptance test passes, you may have some unit tests left over, go ahead and write the tests now, and then write the code that makes them work.
 
 Watch me build a calculator in this way
 ---------------------------------------
